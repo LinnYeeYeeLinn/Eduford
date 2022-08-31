@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600;700&family=Finlandica:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Roboto:wght@400;500;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    transition: all .5s linear;
+    font-family: 'Roboto', sans-serif;
+    list-style-type: none;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+    overflow-x: hidden;
+}
+button{
+    padding: .5rem 1.3rem;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.473);
+    position: relative;
+    margin-top: 1rem;
+}
+button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    background-color: orangered;
+    transition: .5s;
+}
+button:hover::before{
+    width: 100%;
+    left: 0;
+}
+.title{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+}
+section{
+    text-align: center;
+}
+.section{
+    padding: 2% 7%;
+}
+.hero{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(./eduford_img/banner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 2rem;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.logo img{
+    width: 140px;
+}
+ul li{
+    display: inline-block;
+    padding: 0 .8rem;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+ul li a, button a{
+    color: white;
+}
+ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: orangered;
+    margin: auto;
+    display: block;
+    transition: .5s;
+}
+ul li:hover::after{
+    width: 100%;
+}
+.hero-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+.hero-content h1{
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.hero-content p, .review h3{
+    margin: 1rem 0;
+}
+.content{
+    margin: 3rem 0;
+    display: grid;
+    grid-gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.sub-content, .content-review{
+    padding: 1.5rem;
+    border-radius: .5rem;
+    background-color: rgba(255, 202, 183, 0.534);
+}
+.content p, footer p{
+    margin-top: 1rem;
+    color: #666;
+}
+.content-img{
+    border-radius: .5rem;
+    width: 100%;
+}
+.content-img:hover{
+    transform: scale(1.05);
+}
+.content-blog{
+    margin-top: 1rem;
+    text-align: left;
+}
+.content-review{
+    display: flex;
+    flex-direction: row;
+}
+.content-review img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid orangered;
+}
+.review{
+    margin-left: 1rem;
+    text-align: left;
+}
+.review p{
+    margin-top: 0;
+}
+#contact{
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(./eduford_img/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 10rem 0;
+}
+#contact h1{
+    font-size: 1.8rem;
+}
+#contact button{
+    z-index: 1;
+}
+footer{
+    padding: 5rem 0 1rem 0;
+    text-align: center;
+}
+footer p{
+    margin: 1rem 0;
+    padding: 0 10rem;
+}
+footer div i{
+    margin: 0 .7rem;
+    color: orangered;
+    cursor: pointer;
+}
+.fa-heart, .content-review i{
+    color: orangered;
+}
+.menu, .closeMenu{
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: none;
+}
+.menu{
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .section{
+        padding: 2% 3%;
+    }
+    .hero-content{
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        color: white;
+        width: 100%;
+    }
+    footer p{
+        padding: 0 1rem;
+    }
+    .logo img{
+        width: 130px;
+    }
+    .menu, .closeMenu{
+        display: block;
+    }
+    .hero ul{
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        text-align: start;
+        padding: .5rem 1rem;
+        display: none;
+    }
+    .hero ul li{
+        display: block;
+        margin: 1rem 0;
+        border: 1px solid rgba(230, 230, 230, 0.788);
+        padding: 1rem .5rem;
+    }
+    .hero ul li a{
+        color: black;
+    }
+    .hero ul li:hover a{
+        color: orangered;
+    }
+    ul li::after{
+        content: '';
+        height: 0;
+    }
+    .closeMenu{
+        border-radius: 50%;
+        width: 40px;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.301);
+        color: black;
+        position: absolute;
+        left: 50%;
+        bottom: 3rem;
+    }
+    .closeMenu:hover{
+        background-color: orangered;
+        color: white;
+    }
+}
+
+
+@media screen and (max-width: 705px) {
+    .content{
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .facility-box{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid rgba(236, 236, 236, 0.795);
+        padding: .5rem;
+        border-radius: .5rem;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.301);
+    }
+    .facility-box img{
+        width: 30%;
+        margin-right: 1.5rem;
+    }
+    #contact-section h1{
+        font-size: 1.3rem;
+    }
+    .hero-content h1{
+        font-size: 2.5rem;
+    }
+    .title{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 490px) {
+    .content{
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .facility-box{
+        display: flex;
+        flex-direction: column;
+    }
+    .facility-box img{
+        width: 30%;
+        margin-right: 1.5rem;
+    }
+    #contact-section h1{
+        font-size: 1.1rem;
+    }
+    .hero-content h1{
+        font-size: 1.7rem;
+    }
+    .content-review{
+        display: flex;
+        flex-direction: column;
+    }
+    .content-review img{
+        margin-bottom: 1rem;
+    }
+    .review{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 400px) {
+    .content{
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+}
+@media screen and (max-width: 1000px) {
+    footer p{
+        margin: 1rem 0;
+        padding: 0 5rem;
+    }
+}
